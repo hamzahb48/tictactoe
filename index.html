@@ -2,40 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>Tictactoe</title>
 </head>
-<body>
-    <section class="main">
-        <h1>Enjoy Your Time</h1>
-        <div class="container">
-            <form action="">
-                <table>
-                    <tr>
-                        <td><input type="button" onclick="F(this)"></td>
-                        <td><input type="button" onclick="F(this)"></td>
-                        <td><input type="button" onclick="F(this)"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="button" onclick="F(this)"></td>
-                        <td><input type="button" onclick="F(this)"></td>
-                        <td><input type="button" onclick="F(this)"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="button" onclick="F(this)"></td>
-                        <td><input type="button" onclick="F(this)"></td>
-                        <td><input type="button" onclick="F(this)"></td>
-                    </tr>
-                </table>
-            </div>
-            <input type="button" value="Repeat?" id="btn" onclick="F2()">
-            </form>
-            <p id="p"></p>
+<body>        
+    <h1 class="headline">Unleash Your Strategy: Play the Ultimate Tic-Tac-Toe Showdown!</h1>
+
+    <section id="main">
+        <div class="top square right"></div>
+        <div class="top square"></div>
+        <div class="top square left"></div>
+        <div class="square left"></div>
+        <div class="square"></div>
+        <div class="square right"></div>
+        <div class="bottom square left"></div>
+        <div class="bottom square"></div>
+        <div class="bottom square right"></div>
     </section>
-    <script src="scripttest.js"></script>
+
+    <section id="result-section">
+        <div class="">
+            <h2>Player (X)</h2>
+            <span>0</span>
+        </div>
+        <div class="">
+            <h2>Tie</h2>
+            <span>0</span>
+        </div>
+        <div class="">
+            <h2>Player (O)</h2>
+            <span>0</span>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="script.js">
 </body>
 </html>
