@@ -9,7 +9,7 @@
 <body>        
     <h1 id="headline">Play the Ultimate Tic-Tac-Toe Showdown!</h1>
 
-    <section id="main">
+    <section id="main"  ondblclick="Reset()">
         <div class="top square left" onclick="Verify(this)"></div>
         <div class="top square" onclick="Verify(this)"></div>
         <div class="top square right" onclick="Verify(this)"></div>
@@ -24,15 +24,15 @@
     <section id="result-section">
         <div class="">
             <h2>Player 1 (X)</h2>
-            <span>0</span>
+            <span  id="playerX">0</span>
         </div>
         <div class="">
             <h2>Tie</h2>
-            <span>0</span>
+            <span id="tie">0</span>
         </div>
         <div class="">
             <h2>Player 2 (O)</h2>
-            <span>0</span>
+            <span id="playerO">0</span>
         </div>
     </section>
 
