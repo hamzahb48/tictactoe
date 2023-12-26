@@ -68,6 +68,7 @@ body {
 #result-section div{
     display: flex;
     flex-direction: column;
+    opacity: 0.5;
 }
 
 #result-section div span{
@@ -76,4 +77,3 @@ body {
     font-size: 1.3rem;
     font-weight: 500;
 }
-

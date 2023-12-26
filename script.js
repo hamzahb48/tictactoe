@@ -7,16 +7,51 @@ function Verify(square){
             square.textContent = "X";
             playerOne = false;
             square.classList.add('X');
+
+            highlightThePlayer('O');
         }
         else{
             square.textContent = "O";
             playerOne = true;
             square.classList.add('O');
+
+            highlightThePlayer();
         }
 
         square.setAttribute('disabled', true);
         checkIfTheGameIsDone();
     }
+}
+
+function highlightThePlayer(player = 'X'){
+    if(player=='X'){
+        document.getElementById('secondplayer').style.opacity = "0.5";
+        document.getElementById('secondplayer').style.color = "whitesmoke";
+
+        document.getElementById('firstplayer').style.opacity = "0.8";
+        document.getElementById('firstplayer').style.color = "white";
+    }
+    else if(player == 'O'){
+        document.getElementById('firstplayer').style.opacity = "0.5";
+        document.getElementById('firstplayer').style.color = "whitesmoke";
+        
+        document.getElementById('secondplayer').style.opacity = "0.8";
+        document.getElementById('secondplayer').style.color = "white";
+    }
+}
+
+function resetTheStyle(){
+    document.getElementById('secondplayer').style.opacity = "0.5";
+    document.getElementById('secondplayer').style.color = "whitesmoke";  
+    document.getElementById('secondplayer').style.background = "none";
+      
+    document.getElementById('firstplayer').style.opacity = "0.5";
+    document.getElementById('firstplayer').style.color = "whitesmoke";
+    document.getElementById('firstplayer').style.background = "none";
+
+    document.getElementById('tiesection').style.opacity = "0.5";
+    document.getElementById('tiesection').style.color = "whitesmoke";
+    document.getElementById('tiesection').style.background = "none";
 }
 
 function checkIfTheGameIsDone(){
@@ -100,13 +135,17 @@ function checkIfTheGameIsDone(){
     }
 
     if(Xs.length + Os.length == 9){
-        Score('tie')
+        if(!gameIsDone){
+            Score('tie');
+        }
     }
-
 }
 
 function Score(winner){
+
     gameIsDone = true;
+
+    resetTheStyle();
 
     var boxes = document.querySelectorAll('.square');
     boxes.forEach( box => {
@@ -120,21 +159,27 @@ function Score(winner){
     if(winner == 'X'){
         playerX++;
         document.getElementById('playerX').textContent = playerX;
+        document.getElementById('firstplayer').style.opacity = "1";
+        document.getElementById('firstplayer').style.background = "rgb(79, 225, 186)";
     }
     else if(winner == 'O'){
         playerO++;
         document.getElementById('playerO').textContent = playerO;
+        document.getElementById('secondplayer').style.opacity = "1";
+        document.getElementById('secondplayer').style.background = "rgb(79, 225, 186)";
     }
     else if(winner == 'tie'){
         tie++;
         document.getElementById('tie').textContent = tie;
+        document.getElementById('tiesection').style.opacity = "1";
+        document.getElementById('tiesecion').style.background = "rgb(79, 225, 186)";
     }
 }
 
 function Reset() {
-    playerOne = true;
-
     if(gameIsDone){
+        playerOne = true;
+
         var boxes = document.querySelectorAll('.square');
 
         boxes.forEach( box => {
@@ -149,6 +194,8 @@ function Reset() {
             }
         });
 
+        resetTheStyle();
+        highlightThePlayer();
         gameIsDone = false;
     }
 }
